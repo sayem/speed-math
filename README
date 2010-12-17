@@ -1,0 +1,21 @@
+
+Simple speed math test I wrote a while ago when I was learning Python; good practice for exercising mental arithmetic.
+
+Load up the file and then choose from three options (input 1, 2, or 3 at the prompt): 3x3 multiplication, calendar dates, or just exit the file. Each round has 10 questions and everything is timed.
+
+For 3-digit multiplication, both the Vedic and Trachtenberg techniques are awesome.
+
+For calculating the day of the week of any date, use Zeller's Rule (http://en.wikipedia.org/wiki/Zeller%27s_congruence):
+
+     f = k + [(13*m-1)/5] + D + [D/4] + [C/4] - 2*C
+
+     where k is the day of the month
+           m is the month number
+           d is the last two digits of the year
+           c is the first two digits of the year
+
+     month numbers in Zeller's formula start at March, so January = 11, February = 12, and March = 1, April = 2, May = 3, and so on
+     
+     calculate f and then divide it by 7, and take the remainder 
+
+     the remainder then corresponds to the day of the week for the given date: 0 = Sunday, 1 = Monday, 2 = Tuesday... 6 = Saturday    
