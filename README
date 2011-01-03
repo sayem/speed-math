@@ -11,10 +11,10 @@ For calculating the day of the week of any date, use Zeller's Rule (http://en.wi
 
      where k is the day of the month
            m is the month number
-           d is the last two digits of the year
-           c is the first two digits of the year
+           D is the last two digits of the year
+           C is the first two digits of the year
 
-     month numbers in Zeller's formula start at March, so January = 11, February = 12, and March = 1, April = 2, May = 3, and so on
+     month numbers in Zeller's formula start at March, so January = 11, February = 12, and March = 1, April = 2, May = 3, and so on (subtract months by 2)
      
      calculate f and then divide it by 7, and take the remainder 
 

@@ -25,7 +25,6 @@ while 1:
 
 		t1m = time.localtime().tm_min
 		t1s = time.localtime().tm_sec
-		t1 = t1m + t1s/100.0
 		n = 0
 		x = 0
 
@@ -43,8 +42,9 @@ while 1:
 
 		t2m = time.localtime().tm_min
 		t2s = time.localtime().tm_sec
-		t2 = t2m + t2s/100.0
-		td = t2 - t1		
+		if t2m < t1m:
+			t2m += 60  
+		td = (t2m - t1m) + (t2s - t1s)/100.0
 		
 		print '\n',x,'out of 10 wrong\navg time/question:',td/10,'\ntotal time:',td
 
@@ -85,7 +85,7 @@ while 1:
 					d = self.y
 					m = self.month - 2
 				
-				self.z = self.k + (13*m-1)/5 + d + d/4 + self.c/4 - 2*self.c  # Zeller's formula
+				self.z = self.k + (13*m-1)/5 + d + d/4 + self.c/4 - 2*self.c  # zeller's formula
 
 				self.r = self.z%7     # the remainder of z/7 determines the day of the week
 	
@@ -94,7 +94,6 @@ while 1:
 		
 		t1m = time.localtime().tm_min
 		t1s = time.localtime().tm_sec
-		t1 = t1m + t1s/100.0
 		n = 0
 		x = 0
 
@@ -112,8 +111,9 @@ while 1:
 	
 		t2m = time.localtime().tm_min
 		t2s = time.localtime().tm_sec
-		t2 = t2m + t2s/100.0
-		td = t2 - t1		
+		if t2m < t1m:
+			t2m += 60  
+		td = (t2m - t1m) + (t2s - t1s)/100.0
 		
 		print '\n',x,'out of 10 wrong\navg time/question:',td/10,'\ntotal time:',td
 
